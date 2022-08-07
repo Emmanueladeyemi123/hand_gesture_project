@@ -1,0 +1,28 @@
+.body{
+    background-color: darkred;
+}
+
+.top_div{
+    letter-spacing: 4px;
+    background-color: aqua;
+    width:50%;
+    height:5%;
+    border-radius: 15px;
+}
+
+.instruction{
+    color:white;
+}
+
+#label{
+    color:green;
+    background-color:white;
+    border-radius: 15px;
+    width: 100px;
+    height: 15px;
+}
+.webcam,.result{
+    border: 2px dashed black;
+    width: 350px;
+    height: 300px;
+}
