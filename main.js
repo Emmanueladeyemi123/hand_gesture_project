@@ -1,10 +1,8 @@
-https://teachablemachine.withgoogle.com/models/0MGq-9ya5/
-
 
 Webcam.set({
     height: 300,
     width: 400,
-    image_format: "png",
+    image_format:"png",
     png_quality: 90
 });
 
@@ -12,7 +10,7 @@ camera = document.getElementById("camera");
 Webcam.attach("#camera");
 
 
-function capture() {
+function cap() {
     Webcam.snap(function (data_uri) {
         document.getElementById("result").innerHTML = '<img src="' + data_uri + '" id="captured_image">'
     });
@@ -23,4 +21,20 @@ classifer = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/
 
 function modelLoaded() {
     console.log("Model has loaded");
+} 
+
+function check() {
+    img = document.getElementById("captured_image");
+    classifer.classify(img, got_result);
+}
+
+function got_result(error, results) {
+    if (error) {
+        console.error(error)
+    }
+    else {
+        document.getElementById("result").innerHTML = results[0].label;
+        prediction1 = results[0].label;
+        prediction2 = results[1].label;
+    }
 }
